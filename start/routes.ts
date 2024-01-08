@@ -21,7 +21,7 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+    return { hello: 'world' }
 })
 
 Route.post('/users', 'UsersController.store')
@@ -34,13 +34,19 @@ Route.post('/sessions', 'SessionsController.store')
 Route.delete('/sessions', 'SessionsController.destroy')
 
 Route.post('/groups', 'GroupsController.store').middleware('auth')
+Route.get('/groups', 'GroupsController.index').middleware('auth')
+Route.delete('/groups/:id', 'GroupsController.destroy').middleware('auth')
+Route.patch('/groups/:id', 'GroupsController.update').middleware('auth')
+Route.delete('/groups/:groupId/players/:playerId', 'GroupsController.removePlayer').middleware(
+    'auth'
+)
 
 Route.get('/groups/:groupId/requests', 'GroupsRequestsController.index').middleware('auth')
 Route.post('/groups/:groupId/requests', 'GroupsRequestsController.store').middleware('auth')
 Route.post(
-  '/groups/:groupId/requests/:requestId/accept',
-  'GroupsRequestsController.accept'
+    '/groups/:groupId/requests/:requestId/accept',
+    'GroupsRequestsController.accept'
 ).middleware('auth')
 Route.delete('/groups/:groupId/requests/:requestId', 'GroupsRequestsController.destroy').middleware(
-  'auth'
+    'auth'
 )
