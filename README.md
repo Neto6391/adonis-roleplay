@@ -15,3 +15,4 @@ This repository is to purposes to learning functionalities of adonis, the rolepl
 -   Mysql
 -   Insomnia(or Postman or whatever client to test routes in API)
 -   Create Mail Trap project, and copies config variables to .env test for test send mail unit tests
+-   Import in insomnia Insomnia_2024-01-08.json the collections for test routes
