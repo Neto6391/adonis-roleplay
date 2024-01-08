@@ -5,7 +5,7 @@ This repository is to purposes to learning functionalities of adonis, the rolepl
 # Run Project
 
 -   Use Database Mysql in Docker or server mode
--   Create database 'roleplay' => 'create table roleplay;'
+-   Create database 'roleplay' => 'create database roleplay;'
 -   After created database, run all migrations from Adonis => 'node ace migration:run'
 -   To run project, use this command => 'yarn dev'
 
